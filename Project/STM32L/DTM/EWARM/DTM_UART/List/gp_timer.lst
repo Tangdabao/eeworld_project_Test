@@ -1,0 +1,274 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       29/Jan/2018  14:45:21
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Library\STM32L\Middlewares\ST\STM32_BlueNRG1\HAL\src\gp_timer.c
+#    Command line =  
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Library\STM32L\Middlewares\ST\STM32_BlueNRG1\HAL\src\gp_timer.c"
+#        -D STM32L151xB -D STM32L1XX_XL -D USE_STM32L1XX_STEVAL_IDB00xV1 -D
+#        USE_HAL_DRIVER -D HCLK_32MHZ=1 -D SYSCLK_MSI=1 -D ENABLE_USART -D
+#        USER_DEFINED_PLATFORM=USER_EVAL_PLATFORM -D IRQ_RESET_PIN -D DTM_UART
+#        -lC "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\List"
+#        -o "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj"
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=Cortex-M3 -e --fpu=None --dlib_config
+#        D:\Software\IAR_BlueNRG\arm\INC\c\DLib_Config_Normal.h -I
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\inc\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Middlewares\ST\STM32_BlueNRG1\HAL\inc\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Drivers\BSP\STM32L1xx_BlueNRG1\inc\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Drivers\BSP\STM32L1xx_Nucleo\inc\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Drivers\CMSIS\Device\ST\STM32L1xx\Include\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Drivers\STM32L1xx_HAL_Driver\Inc\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Middlewares\ST\STM32_BlueNRG1\STM32L1xx_HAL_BlueNRG1_Drivers\inc\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Middlewares\ST\STM32_BlueNRG1\SimpleBlueNRG1_HCI\includes\"
+#        -On --use_c++_inline -I D:\Software\IAR_BlueNRG\arm\CMSIS\Include\
+#    Locale       =  Chinese (Simplified)_China.936
+#    List file    =  
+#        C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\List\gp_timer.lst
+#    Object file  =  
+#        C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\gp_timer.o
+#
+###############################################################################
+
+C:\Users\Administrator\Desktop\Temporary Files\eeworld_project\Project_Test\Library\STM32L\Middlewares\ST\STM32_BlueNRG1\HAL\src\gp_timer.c
+      1          /*
+      2           * Copyright (c) STMicrolectronics
+      3           * All rights reserved.
+      4           *
+      5           * Redistribution and use in source and binary forms, with or without
+      6           * modification, are permitted provided that the following conditions
+      7           * are met:
+      8           * 1. Redistributions of source code must retain the above copyright
+      9           *    notice, this list of conditions and the following disclaimer.
+     10           * 2. Redistributions in binary form must reproduce the above copyright
+     11           *    notice, this list of conditions and the following disclaimer in the
+     12           *    documentation and/or other materials provided with the distribution.
+     13           * 3. Neither the name of the Institute nor the names of its contributors
+     14           *    may be used to endorse or promote products derived from this software
+     15           *    without specific prior written permission.
+     16           *
+     17           * THIS SOFTWARE IS PROVIDED BY THE INSTITUTE AND CONTRIBUTORS ``AS IS'' AND
+     18           * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+     19           * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+     20           * ARE DISCLAIMED.  IN NO EVENT SHALL THE INSTITUTE OR CONTRIBUTORS BE LIABLE
+     21           * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+     22           * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+     23           * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+     24           * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+     25           * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+     26           * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+     27           * SUCH DAMAGE.
+     28           *
+     29           *
+     30           */
+     31          
+     32          #include "clock.h"
+     33          #include "gp_timer.h"
+     34          
+     35          /*---------------------------------------------------------------------------*/
+     36          /**
+     37           * Set a timer.
+     38           *
+     39           * This function sets a timer for a time sometime in the
+     40           * future. The function timer_expired() will evaluate to true after
+     41           * the timer has expired.
+     42           *
+     43           * @param[in] t         A pointer to the timer
+     44           * @param[in] interval  The interval before the timer expires.
+     45           *
+     46           */
+
+   \                                 In section .text, align 2, keep-with-next
+     47          void
+     48          Timer_Set(struct timer *t, tClockTime interval)
+     49          {
+   \                     Timer_Set: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+     50            t->interval = interval;
+   \   00000006   0x6065             STR      R5,[R4, #+4]
+     51            t->start = Clock_Time();
+   \   00000008   0x.... 0x....      BL       Clock_Time
+   \   0000000C   0x6020             STR      R0,[R4, #+0]
+     52          }
+   \   0000000E   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+     53          /*---------------------------------------------------------------------------*/
+     54          /**
+     55           * Reset the timer with the same interval.
+     56           *
+     57           * This function resets the timer with the same interval that was
+     58           * given to the timer_set() function. The start point of the interval
+     59           * is the exact time that the timer last expired. Therefore, this
+     60           * function will cause the timer to be stable over time, unlike the
+     61           * timer_restart() function.
+     62           *
+     63           * \param t A pointer to the timer.
+     64           *
+     65           * \sa timer_restart()
+     66           */
+
+   \                                 In section .text, align 2, keep-with-next
+     67          void
+     68          Timer_Reset(struct timer *t)
+     69          {
+     70            t->start += t->interval;
+   \                     Timer_Reset: (+1)
+   \   00000000   0x6801             LDR      R1,[R0, #+0]
+   \   00000002   0x6842             LDR      R2,[R0, #+4]
+   \   00000004   0x1851             ADDS     R1,R2,R1
+   \   00000006   0x6001             STR      R1,[R0, #+0]
+     71          }
+   \   00000008   0x4770             BX       LR               ;; return
+     72          /*---------------------------------------------------------------------------*/
+     73          /**
+     74           * Restart the timer from the current point in time
+     75           *
+     76           * This function restarts a timer with the same interval that was
+     77           * given to the timer_set() function. The timer will start at the
+     78           * current time.
+     79           *
+     80           * \note A periodic timer will drift if this function is used to reset
+     81           * it. For preioric timers, use the timer_reset() function instead.
+     82           *
+     83           * \param t A pointer to the timer.
+     84           *
+     85           * \sa timer_reset()
+     86           */
+
+   \                                 In section .text, align 2, keep-with-next
+     87          void
+     88          Timer_Restart(struct timer *t)
+     89          {
+   \                     Timer_Restart: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     90            t->start = Clock_Time();
+   \   00000004   0x.... 0x....      BL       Clock_Time
+   \   00000008   0x6020             STR      R0,[R4, #+0]
+     91          }
+   \   0000000A   0xBD10             POP      {R4,PC}          ;; return
+     92          /*---------------------------------------------------------------------------*/
+     93          /**
+     94           * Check if a timer has expired.
+     95           *
+     96           * This function tests if a timer has expired and returns true or
+     97           * false depending on its status.
+     98           *
+     99           * \param t A pointer to the timer
+    100           *
+    101           * \return Non-zero if the timer has expired, zero otherwise.
+    102           *
+    103           */
+
+   \                                 In section .text, align 2, keep-with-next
+    104          int
+    105          Timer_Expired(struct timer *t)
+    106          {
+   \                     Timer_Expired: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    107            /* Note: Can not return diff >= t->interval so we add 1 to diff and return
+    108               t->interval < diff - required to avoid an internal error in mspgcc. */
+    109            tClockTime diff = (Clock_Time() - t->start) + 1;
+   \   00000004   0x.... 0x....      BL       Clock_Time
+   \   00000008   0x6821             LDR      R1,[R4, #+0]
+   \   0000000A   0x1A40             SUBS     R0,R0,R1
+   \   0000000C   0x1C40             ADDS     R0,R0,#+1
+    110            return t->interval < diff;
+   \   0000000E   0x6861             LDR      R1,[R4, #+4]
+   \   00000010   0x4281             CMP      R1,R0
+   \   00000012   0xD201             BCS.N    ??Timer_Expired_0
+   \   00000014   0x2001             MOVS     R0,#+1
+   \   00000016   0xE000             B.N      ??Timer_Expired_1
+   \                     ??Timer_Expired_0: (+1)
+   \   00000018   0x2000             MOVS     R0,#+0
+   \                     ??Timer_Expired_1: (+1)
+   \   0000001A   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000001C   0xBD10             POP      {R4,PC}          ;; return
+    111          
+    112          }
+    113          /*---------------------------------------------------------------------------*/
+    114          /**
+    115           * The time until the timer expires
+    116           *
+    117           * This function returns the time until the timer expires.
+    118           *
+    119           * \param t A pointer to the timer
+    120           *
+    121           * \return The time until the timer expires
+    122           *
+    123           */
+
+   \                                 In section .text, align 2, keep-with-next
+    124          tClockTime
+    125          Timer_Remaining(struct timer *t)
+    126          {
+   \                     Timer_Remaining: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    127            return t->start + t->interval - Clock_Time();
+   \   00000004   0x.... 0x....      BL       Clock_Time
+   \   00000008   0x6821             LDR      R1,[R4, #+0]
+   \   0000000A   0x6862             LDR      R2,[R4, #+4]
+   \   0000000C   0x1851             ADDS     R1,R2,R1
+   \   0000000E   0x1A08             SUBS     R0,R1,R0
+   \   00000010   0xBD10             POP      {R4,PC}          ;; return
+    128          }
+    129          /*---------------------------------------------------------------------------*/
+    130          
+    131          /** @} */
+    132          
+    133          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   Timer_Expired
+         8   -> Clock_Time
+       8   Timer_Remaining
+         8   -> Clock_Time
+       0   Timer_Reset
+       8   Timer_Restart
+         8   -> Clock_Time
+      16   Timer_Set
+        16   -> Clock_Time
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      30  Timer_Expired
+      18  Timer_Remaining
+      10  Timer_Reset
+      12  Timer_Restart
+      16  Timer_Set
+
+ 
+ 86 bytes in section .text
+ 
+ 86 bytes of CODE memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,180 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       29/Jan/2018  14:45:21
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Library\STM32L\Middlewares\ST\STM32_BlueNRG1\HAL\src\clock.c
+#    Command line =  
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Library\STM32L\Middlewares\ST\STM32_BlueNRG1\HAL\src\clock.c"
+#        -D STM32L151xB -D STM32L1XX_XL -D USE_STM32L1XX_STEVAL_IDB00xV1 -D
+#        USE_HAL_DRIVER -D HCLK_32MHZ=1 -D SYSCLK_MSI=1 -D ENABLE_USART -D
+#        USER_DEFINED_PLATFORM=USER_EVAL_PLATFORM -D IRQ_RESET_PIN -D DTM_UART
+#        -lC "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\List"
+#        -o "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj"
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=Cortex-M3 -e --fpu=None --dlib_config
+#        D:\Software\IAR_BlueNRG\arm\INC\c\DLib_Config_Normal.h -I
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\inc\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Middlewares\ST\STM32_BlueNRG1\HAL\inc\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Drivers\BSP\STM32L1xx_BlueNRG1\inc\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Drivers\BSP\STM32L1xx_Nucleo\inc\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Drivers\CMSIS\Device\ST\STM32L1xx\Include\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Drivers\STM32L1xx_HAL_Driver\Inc\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Middlewares\ST\STM32_BlueNRG1\STM32L1xx_HAL_BlueNRG1_Drivers\inc\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Middlewares\ST\STM32_BlueNRG1\SimpleBlueNRG1_HCI\includes\"
+#        -On --use_c++_inline -I D:\Software\IAR_BlueNRG\arm\CMSIS\Include\
+#    Locale       =  Chinese (Simplified)_China.936
+#    List file    =  
+#        C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\List\clock.lst
+#    Object file  =  
+#        C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\clock.o
+#
+###############################################################################
+
+C:\Users\Administrator\Desktop\Temporary Files\eeworld_project\Project_Test\Library\STM32L\Middlewares\ST\STM32_BlueNRG1\HAL\src\clock.c
+      1          /**
+      2          ******************************************************************************
+      3          * @file    clock.c 
+      4          * @author  CL
+      5          * @version V1.0.0
+      6          * @date    04-July-2014
+      7          * @brief   
+      8          ******************************************************************************
+      9          * @attention
+     10            *
+     11            * <h2><center>&copy; COPYRIGHT(c) 2014 STMicroelectronics</center></h2>
+     12            *
+     13            * Redistribution and use in source and binary forms, with or without modification,
+     14            * are permitted provided that the following conditions are met:
+     15            *   1. Redistributions of source code must retain the above copyright notice,
+     16            *      this list of conditions and the following disclaimer.
+     17            *   2. Redistributions in binary form must reproduce the above copyright notice,
+     18            *      this list of conditions and the following disclaimer in the documentation
+     19            *      and/or other materials provided with the distribution.
+     20            *   3. Neither the name of STMicroelectronics nor the names of its contributors
+     21            *      may be used to endorse or promote products derived from this software
+     22            *      without specific prior written permission.
+     23            *
+     24            * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+     25            * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+     26            * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+     27            * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+     28            * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+     29            * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+     30            * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+     31            * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+     32            * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+     33            * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     34            *
+     35            ******************************************************************************
+     36            */
+     37            
+     38          /* Includes ------------------------------------------------------------------*/
+     39          #include "clock.h"
+     40          #include "cube_hal.h"
+     41          
+
+   \                                 In section .rodata, align 4
+     42          const uint32_t CLOCK_SECOND = 1000;
+   \                     CLOCK_SECOND:
+   \   00000000   0x000003E8         DC32 1000
+     43          
+     44          /**
+     45           * @brief  Clock_Init
+     46           * @param  None
+     47           * @retval None
+     48           */
+
+   \                                 In section .text, align 2, keep-with-next
+     49          void Clock_Init(void)
+     50          {
+     51            // FIXME: as long as Cube HAL is initialized this is OK
+     52            // Cube HAL default is one clock each 1 ms
+     53          }
+   \                     Clock_Init: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+     54          
+     55          /**
+     56           * @brief  Clock_Time
+     57           * @param  None
+     58           * @retval tClockTime
+     59           */
+
+   \                                 In section .text, align 2, keep-with-next
+     60          tClockTime Clock_Time(void)
+     61          {
+   \                     Clock_Time: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     62            return HAL_GetTick();
+   \   00000002   0x.... 0x....      BL       HAL_GetTick
+   \   00000006   0xBD02             POP      {R1,PC}          ;; return
+     63          }
+     64          
+     65          /**
+     66           * @brief  Clock_Wait Wait for a multiple of 1 ms.
+     67           * @param  int i
+     68           * @retval None
+     69           */
+
+   \                                 In section .text, align 2, keep-with-next
+     70          void Clock_Wait(uint32_t i)
+     71          {
+   \                     Clock_Wait: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     72            HAL_Delay(i);
+   \   00000004   0x0020             MOVS     R0,R4
+   \   00000006   0x.... 0x....      BL       HAL_Delay
+     73          }
+   \   0000000A   0xBD10             POP      {R4,PC}          ;; return
+     74          
+     75          /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
+     76          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   Clock_Init
+       8   Clock_Time
+         8   -> HAL_GetTick
+       8   Clock_Wait
+         8   -> HAL_Delay
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  CLOCK_SECOND
+       2  Clock_Init
+       8  Clock_Time
+      12  Clock_Wait
+
+ 
+  4 bytes in section .rodata
+ 22 bytes in section .text
+ 
+ 22 bytes of CODE  memory
+  4 bytes of CONST memory
+
+Errors: none
+Warnings: none

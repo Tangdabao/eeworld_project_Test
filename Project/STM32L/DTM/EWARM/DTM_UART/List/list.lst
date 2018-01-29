@@ -1,0 +1,345 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       29/Jan/2018  14:45:22
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Library\STM32L\Middlewares\ST\STM32_BlueNRG1\HAL\src\list.c
+#    Command line =  
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Library\STM32L\Middlewares\ST\STM32_BlueNRG1\HAL\src\list.c"
+#        -D STM32L151xB -D STM32L1XX_XL -D USE_STM32L1XX_STEVAL_IDB00xV1 -D
+#        USE_HAL_DRIVER -D HCLK_32MHZ=1 -D SYSCLK_MSI=1 -D ENABLE_USART -D
+#        USER_DEFINED_PLATFORM=USER_EVAL_PLATFORM -D IRQ_RESET_PIN -D DTM_UART
+#        -lC "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\List"
+#        -o "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj"
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=Cortex-M3 -e --fpu=None --dlib_config
+#        D:\Software\IAR_BlueNRG\arm\INC\c\DLib_Config_Normal.h -I
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\inc\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Middlewares\ST\STM32_BlueNRG1\HAL\inc\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Drivers\BSP\STM32L1xx_BlueNRG1\inc\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Drivers\BSP\STM32L1xx_Nucleo\inc\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Drivers\CMSIS\Device\ST\STM32L1xx\Include\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Drivers\STM32L1xx_HAL_Driver\Inc\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Middlewares\ST\STM32_BlueNRG1\STM32L1xx_HAL_BlueNRG1_Drivers\inc\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Middlewares\ST\STM32_BlueNRG1\SimpleBlueNRG1_HCI\includes\"
+#        -On --use_c++_inline -I D:\Software\IAR_BlueNRG\arm\CMSIS\Include\
+#    Locale       =  Chinese (Simplified)_China.936
+#    List file    =  
+#        C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\List\list.lst
+#    Object file  =  
+#        C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\list.o
+#
+###############################################################################
+
+C:\Users\Administrator\Desktop\Temporary Files\eeworld_project\Project_Test\Library\STM32L\Middlewares\ST\STM32_BlueNRG1\HAL\src\list.c
+      1          /******************** (C) COPYRIGHT 2012 STMicroelectronics ********************
+      2          * File Name          : list.c
+      3          * Author             : AMS - HEA&RF BU
+      4          * Version            : V1.0.0
+      5          * Date               : 19-July-2012
+      6          * Description        : Circular Linked List Implementation.
+      7          ********************************************************************************
+      8          * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+      9          * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+     10          * AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT,
+     11          * INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE
+     12          * CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING
+     13          * INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     14          *******************************************************************************/
+     15          
+     16          /******************************************************************************
+     17           * Include Files
+     18          ******************************************************************************/
+     19          #include <hal_types.h>
+     20          #include "list.h"
+     21          
+     22          /******************************************************************************
+     23           * Function Definitions 
+     24          ******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+     25          void list_init_head (tListNode * listHead)
+     26          {
+     27            listHead->next = listHead;
+   \                     list_init_head: (+1)
+   \   00000000   0x6000             STR      R0,[R0, #+0]
+     28            listHead->prev = listHead;	
+   \   00000002   0x6040             STR      R0,[R0, #+4]
+     29          }
+   \   00000004   0x4770             BX       LR               ;; return
+     30          
+
+   \                                 In section .text, align 2, keep-with-next
+     31          uint8_t list_is_empty (tListNode * listHead)
+     32          {
+     33            return ((listHead->next == listHead)? TRUE:FALSE);
+   \                     list_is_empty: (+1)
+   \   00000000   0x6801             LDR      R1,[R0, #+0]
+   \   00000002   0x4281             CMP      R1,R0
+   \   00000004   0xD101             BNE.N    ??list_is_empty_0
+   \   00000006   0x2001             MOVS     R0,#+1
+   \   00000008   0xE000             B.N      ??list_is_empty_1
+   \                     ??list_is_empty_0: (+1)
+   \   0000000A   0x2000             MOVS     R0,#+0
+   \                     ??list_is_empty_1: (+1)
+   \   0000000C   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000000E   0x4770             BX       LR               ;; return
+     34          }
+     35          
+
+   \                                 In section .text, align 2, keep-with-next
+     36          void list_insert_head (tListNode * listHead, tListNode * node)
+     37          {
+     38            node->next = listHead->next;
+   \                     list_insert_head: (+1)
+   \   00000000   0x6802             LDR      R2,[R0, #+0]
+   \   00000002   0x600A             STR      R2,[R1, #+0]
+     39            node->prev = listHead;
+   \   00000004   0x6048             STR      R0,[R1, #+4]
+     40            listHead->next = node;
+   \   00000006   0x6001             STR      R1,[R0, #+0]
+     41            (node->next)->prev = node;
+   \   00000008   0x680A             LDR      R2,[R1, #+0]
+   \   0000000A   0x6051             STR      R1,[R2, #+4]
+     42          }
+   \   0000000C   0x4770             BX       LR               ;; return
+     43          
+     44          
+
+   \                                 In section .text, align 2, keep-with-next
+     45          void list_insert_tail (tListNode * listHead, tListNode * node)
+     46          {
+     47            node->next = listHead;
+   \                     list_insert_tail: (+1)
+   \   00000000   0x6008             STR      R0,[R1, #+0]
+     48            node->prev = listHead->prev;
+   \   00000002   0x6842             LDR      R2,[R0, #+4]
+   \   00000004   0x604A             STR      R2,[R1, #+4]
+     49            listHead->prev = node;
+   \   00000006   0x6041             STR      R1,[R0, #+4]
+     50            (node->prev)->next = node;
+   \   00000008   0x684A             LDR      R2,[R1, #+4]
+   \   0000000A   0x6011             STR      R1,[R2, #+0]
+     51          }
+   \   0000000C   0x4770             BX       LR               ;; return
+     52          
+     53          
+
+   \                                 In section .text, align 2, keep-with-next
+     54          void list_remove_node (tListNode * node)
+     55          {
+     56            (node->prev)->next = node->next;
+   \                     list_remove_node: (+1)
+   \   00000000   0x6801             LDR      R1,[R0, #+0]
+   \   00000002   0x6842             LDR      R2,[R0, #+4]
+   \   00000004   0x6011             STR      R1,[R2, #+0]
+     57            (node->next)->prev = node->prev;
+   \   00000006   0x6841             LDR      R1,[R0, #+4]
+   \   00000008   0x6802             LDR      R2,[R0, #+0]
+   \   0000000A   0x6051             STR      R1,[R2, #+4]
+     58          }
+   \   0000000C   0x4770             BX       LR               ;; return
+     59          
+     60          
+
+   \                                 In section .text, align 2, keep-with-next
+     61          void list_remove_head (tListNode * listHead, tListNode ** node )
+     62          {
+   \                     list_remove_head: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+     63            *node = listHead->next;
+   \   00000006   0x6820             LDR      R0,[R4, #+0]
+   \   00000008   0x6028             STR      R0,[R5, #+0]
+     64            list_remove_node (listHead->next);
+   \   0000000A   0x6820             LDR      R0,[R4, #+0]
+   \   0000000C   0x.... 0x....      BL       list_remove_node
+     65            (*node)->next = NULL;
+   \   00000010   0x2000             MOVS     R0,#+0
+   \   00000012   0x6829             LDR      R1,[R5, #+0]
+   \   00000014   0x6008             STR      R0,[R1, #+0]
+     66            (*node)->prev = NULL;
+   \   00000016   0x2000             MOVS     R0,#+0
+   \   00000018   0x6829             LDR      R1,[R5, #+0]
+   \   0000001A   0x6048             STR      R0,[R1, #+4]
+     67          }
+   \   0000001C   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+     68          
+     69          
+
+   \                                 In section .text, align 2, keep-with-next
+     70          void list_remove_tail (tListNode * listHead, tListNode ** node )
+     71          {
+   \                     list_remove_tail: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+     72            *node = listHead->prev;
+   \   00000006   0x6860             LDR      R0,[R4, #+4]
+   \   00000008   0x6028             STR      R0,[R5, #+0]
+     73            list_remove_node (listHead->prev);
+   \   0000000A   0x6860             LDR      R0,[R4, #+4]
+   \   0000000C   0x.... 0x....      BL       list_remove_node
+     74            (*node)->next = NULL;
+   \   00000010   0x2000             MOVS     R0,#+0
+   \   00000012   0x6829             LDR      R1,[R5, #+0]
+   \   00000014   0x6008             STR      R0,[R1, #+0]
+     75            (*node)->prev = NULL;
+   \   00000016   0x2000             MOVS     R0,#+0
+   \   00000018   0x6829             LDR      R1,[R5, #+0]
+   \   0000001A   0x6048             STR      R0,[R1, #+4]
+     76          }
+   \   0000001C   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+     77          
+     78          
+
+   \                                 In section .text, align 2, keep-with-next
+     79          void list_insert_node_after (tListNode * node, tListNode * ref_node)
+     80          {
+     81            node->next = ref_node->next;
+   \                     list_insert_node_after: (+1)
+   \   00000000   0x680A             LDR      R2,[R1, #+0]
+   \   00000002   0x6002             STR      R2,[R0, #+0]
+     82            node->prev = ref_node;
+   \   00000004   0x6041             STR      R1,[R0, #+4]
+     83            ref_node->next = node;
+   \   00000006   0x6008             STR      R0,[R1, #+0]
+     84            (node->next)->prev = node;
+   \   00000008   0x6802             LDR      R2,[R0, #+0]
+   \   0000000A   0x6050             STR      R0,[R2, #+4]
+     85          }
+   \   0000000C   0x4770             BX       LR               ;; return
+     86          
+     87          
+
+   \                                 In section .text, align 2, keep-with-next
+     88          void list_insert_node_before (tListNode * node, tListNode * ref_node)
+     89          {
+     90            node->next = ref_node;
+   \                     list_insert_node_before: (+1)
+   \   00000000   0x6001             STR      R1,[R0, #+0]
+     91            node->prev = ref_node->prev;
+   \   00000002   0x684A             LDR      R2,[R1, #+4]
+   \   00000004   0x6042             STR      R2,[R0, #+4]
+     92            ref_node->prev = node;
+   \   00000006   0x6048             STR      R0,[R1, #+4]
+     93            (node->prev)->next = node;
+   \   00000008   0x6842             LDR      R2,[R0, #+4]
+   \   0000000A   0x6010             STR      R0,[R2, #+0]
+     94          }
+   \   0000000C   0x4770             BX       LR               ;; return
+     95          
+     96          
+
+   \                                 In section .text, align 2, keep-with-next
+     97          int list_get_size (tListNode * listHead)
+     98          {
+   \                     list_get_size: (+1)
+   \   00000000   0x0001             MOVS     R1,R0
+     99            int size = 0;
+   \   00000002   0x2000             MOVS     R0,#+0
+    100            tListNode * temp = listHead->next;
+   \   00000004   0x680A             LDR      R2,[R1, #+0]
+    101            while (temp != listHead)
+   \                     ??list_get_size_0: (+1)
+   \   00000006   0x428A             CMP      R2,R1
+   \   00000008   0xD002             BEQ.N    ??list_get_size_1
+    102            {
+    103              size++;
+   \   0000000A   0x1C40             ADDS     R0,R0,#+1
+    104              temp = temp->next;		
+   \   0000000C   0x6812             LDR      R2,[R2, #+0]
+   \   0000000E   0xE7FA             B.N      ??list_get_size_0
+    105            }
+    106            return (size);
+   \                     ??list_get_size_1: (+1)
+   \   00000010   0x4770             BX       LR               ;; return
+    107          }
+    108          
+
+   \                                 In section .text, align 2, keep-with-next
+    109          void list_get_next_node (tListNode * ref_node, tListNode ** node)
+    110          {
+    111            *node = ref_node->next;
+   \                     list_get_next_node: (+1)
+   \   00000000   0x6802             LDR      R2,[R0, #+0]
+   \   00000002   0x600A             STR      R2,[R1, #+0]
+    112          }
+   \   00000004   0x4770             BX       LR               ;; return
+    113          
+    114          
+
+   \                                 In section .text, align 2, keep-with-next
+    115          void list_get_prev_node (tListNode * ref_node, tListNode ** node)
+    116          {
+    117            *node = ref_node->prev;
+   \                     list_get_prev_node: (+1)
+   \   00000000   0x6842             LDR      R2,[R0, #+4]
+   \   00000002   0x600A             STR      R2,[R1, #+0]
+    118          }
+   \   00000004   0x4770             BX       LR               ;; return
+    119          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   list_get_next_node
+       0   list_get_prev_node
+       0   list_get_size
+       0   list_init_head
+       0   list_insert_head
+       0   list_insert_node_after
+       0   list_insert_node_before
+       0   list_insert_tail
+       0   list_is_empty
+      16   list_remove_head
+        16   -> list_remove_node
+       0   list_remove_node
+      16   list_remove_tail
+        16   -> list_remove_node
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       6  list_get_next_node
+       6  list_get_prev_node
+      18  list_get_size
+       6  list_init_head
+      14  list_insert_head
+      14  list_insert_node_after
+      14  list_insert_node_before
+      14  list_insert_tail
+      16  list_is_empty
+      30  list_remove_head
+      14  list_remove_node
+      30  list_remove_tail
+
+ 
+ 182 bytes in section .text
+ 
+ 182 bytes of CODE memory
+
+Errors: none
+Warnings: none

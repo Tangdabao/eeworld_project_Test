@@ -1,0 +1,15 @@
+"D:\Software\IAR_BlueNRG\arm\bin\armproc.dll" 
+
+"D:\Software\IAR_BlueNRG\arm\bin\armstlink2.dll" 
+
+"C:\Users\Administrator\Desktop\Temporary Files\eeworld_project\Project_Test\Project\STM32L\BLE_ChatMasterSlave\EWARM\Release\Exe\BLE_ChatMasterSlave.out" 
+
+--plugin "D:\Software\IAR_BlueNRG\arm\bin\armbat.dll" 
+
+--device_macro "D:\Software\IAR_BlueNRG\arm\config\debugger\ST\STM32L1xx.dmac" 
+
+--flash_loader "D:\Software\IAR_BlueNRG\arm\config\flashloader\ST\FlashSTM32L15xxB.board" 
+
+
+
+

@@ -1,0 +1,164 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       29/Jan/2018  14:45:22
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Library\STM32L\Middlewares\ST\STM32_BlueNRG1\HAL\src\osal.c
+#    Command line =  
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Library\STM32L\Middlewares\ST\STM32_BlueNRG1\HAL\src\osal.c"
+#        -D STM32L151xB -D STM32L1XX_XL -D USE_STM32L1XX_STEVAL_IDB00xV1 -D
+#        USE_HAL_DRIVER -D HCLK_32MHZ=1 -D SYSCLK_MSI=1 -D ENABLE_USART -D
+#        USER_DEFINED_PLATFORM=USER_EVAL_PLATFORM -D IRQ_RESET_PIN -D DTM_UART
+#        -lC "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\List"
+#        -o "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj"
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=Cortex-M3 -e --fpu=None --dlib_config
+#        D:\Software\IAR_BlueNRG\arm\INC\c\DLib_Config_Normal.h -I
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\inc\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Middlewares\ST\STM32_BlueNRG1\HAL\inc\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Drivers\BSP\STM32L1xx_BlueNRG1\inc\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Drivers\BSP\STM32L1xx_Nucleo\inc\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Drivers\CMSIS\Device\ST\STM32L1xx\Include\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Drivers\STM32L1xx_HAL_Driver\Inc\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Middlewares\ST\STM32_BlueNRG1\STM32L1xx_HAL_BlueNRG1_Drivers\inc\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Middlewares\ST\STM32_BlueNRG1\SimpleBlueNRG1_HCI\includes\"
+#        -On --use_c++_inline -I D:\Software\IAR_BlueNRG\arm\CMSIS\Include\
+#    Locale       =  Chinese (Simplified)_China.936
+#    List file    =  
+#        C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\List\osal.lst
+#    Object file  =  
+#        C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\osal.o
+#
+###############################################################################
+
+C:\Users\Administrator\Desktop\Temporary Files\eeworld_project\Project_Test\Library\STM32L\Middlewares\ST\STM32_BlueNRG1\HAL\src\osal.c
+      1          /******************** (C) COPYRIGHT 2012 STMicroelectronics ********************
+      2          * File Name          : osal.c
+      3          * Author             : AMS - HEA&RF BU
+      4          * Version            : V1.0.0
+      5          * Date               : 19-July-2012
+      6          * Description        : Implementation of OS abstraction layer functions used by
+      7          *                      the library.
+      8          ********************************************************************************
+      9          * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+     10          * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE TIME.
+     11          * AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY DIRECT,
+     12          * INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING FROM THE
+     13          * CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE CODING
+     14          * INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     15          *******************************************************************************/
+     16          
+     17          /******************************************************************************
+     18           * Includes
+     19           *****************************************************************************/
+     20          #include <string.h>
+     21          #include <osal.h>
+     22          #include <hal.h>
+     23          
+     24           
+     25          /**
+     26           * Osal_MemCpy
+     27           * 
+     28           */
+     29           
+
+   \                                 In section .text, align 2, keep-with-next
+     30          void* Osal_MemCpy(void *dest,const void *src,unsigned int size)
+     31          {
+   \                     Osal_MemCpy: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+   \   00000006   0x0016             MOVS     R6,R2
+     32            return(memcpy(dest,src,size)); 
+   \   00000008   0x0032             MOVS     R2,R6
+   \   0000000A   0x0029             MOVS     R1,R5
+   \   0000000C   0x0020             MOVS     R0,R4
+   \   0000000E   0x.... 0x....      BL       __aeabi_memcpy
+   \   00000012   0x0020             MOVS     R0,R4
+   \   00000014   0xBD70             POP      {R4-R6,PC}       ;; return
+     33          }
+     34          
+     35          /**
+     36           * Osal_MemSet
+     37           * 
+     38           */
+     39          
+
+   \                                 In section .text, align 2, keep-with-next
+     40          void* Osal_MemSet(void *ptr, int value,unsigned int size)
+     41          {
+   \                     Osal_MemSet: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+   \   00000006   0x0016             MOVS     R6,R2
+     42            return(memset(ptr,value,size));
+   \   00000008   0x002A             MOVS     R2,R5
+   \   0000000A   0x0031             MOVS     R1,R6
+   \   0000000C   0x0020             MOVS     R0,R4
+   \   0000000E   0x.... 0x....      BL       __aeabi_memset
+   \   00000012   0x0020             MOVS     R0,R4
+   \   00000014   0xBD70             POP      {R4-R6,PC}       ;; return
+     43          }
+     44          
+
+   \                                 In section .text, align 2, keep-with-next
+     45          uint32_t Osal_Get_Cur_Time(void)
+     46          {
+   \                     Osal_Get_Cur_Time: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     47            return Hal_Get_Timer_Value();
+   \   00000002   0x.... 0x....      BL       Hal_Get_Timer_Value
+   \   00000006   0xBD02             POP      {R1,PC}          ;; return
+     48          }
+     49          
+     50          /******************************************************************************
+     51           * local Functions
+     52           *****************************************************************************/ 
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   Osal_Get_Cur_Time
+         8   -> Hal_Get_Timer_Value
+      16   Osal_MemCpy
+        16   -> __aeabi_memcpy
+      16   Osal_MemSet
+        16   -> __aeabi_memset
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       8  Osal_Get_Cur_Time
+      22  Osal_MemCpy
+      22  Osal_MemSet
+
+ 
+ 52 bytes in section .text
+ 
+ 52 bytes of CODE memory
+
+Errors: none
+Warnings: none

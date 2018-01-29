@@ -1,0 +1,433 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       29/Jan/2018  14:45:23
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Library\STM32L\Drivers\BSP\STM32L1xx_Nucleo\src\SDK_Eval_Timers.c
+#    Command line =  
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Library\STM32L\Drivers\BSP\STM32L1xx_Nucleo\src\SDK_Eval_Timers.c"
+#        -D STM32L151xB -D STM32L1XX_XL -D USE_STM32L1XX_STEVAL_IDB00xV1 -D
+#        USE_HAL_DRIVER -D HCLK_32MHZ=1 -D SYSCLK_MSI=1 -D ENABLE_USART -D
+#        USER_DEFINED_PLATFORM=USER_EVAL_PLATFORM -D IRQ_RESET_PIN -D DTM_UART
+#        -lC "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\List"
+#        -o "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj"
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=Cortex-M3 -e --fpu=None --dlib_config
+#        D:\Software\IAR_BlueNRG\arm\INC\c\DLib_Config_Normal.h -I
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\inc\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Middlewares\ST\STM32_BlueNRG1\HAL\inc\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Drivers\BSP\STM32L1xx_BlueNRG1\inc\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Drivers\BSP\STM32L1xx_Nucleo\inc\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Drivers\CMSIS\Device\ST\STM32L1xx\Include\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Drivers\STM32L1xx_HAL_Driver\Inc\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Middlewares\ST\STM32_BlueNRG1\STM32L1xx_HAL_BlueNRG1_Drivers\inc\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Middlewares\ST\STM32_BlueNRG1\SimpleBlueNRG1_HCI\includes\"
+#        -On --use_c++_inline -I D:\Software\IAR_BlueNRG\arm\CMSIS\Include\
+#    Locale       =  Chinese (Simplified)_China.936
+#    List file    =  
+#        C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\List\SDK_Eval_Timers.lst
+#    Object file  =  
+#        C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\SDK_Eval_Timers.o
+#
+###############################################################################
+
+C:\Users\Administrator\Desktop\Temporary Files\eeworld_project\Project_Test\Library\STM32L\Drivers\BSP\STM32L1xx_Nucleo\src\SDK_Eval_Timers.c
+      1          /**
+      2           * @file    SDK_EVAL_Timers.c
+      3           * @author  VMA division - AMS
+      4           * @version 3.2.1
+      5           * @date    May 1, 2015
+      6           * @brief   SDK EVAL timers configuration.
+      7           * @details
+      8           *
+      9           * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+     10           * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE
+     11           * TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY
+     12           * DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING
+     13           * FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE
+     14           * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     15           *
+     16           * THIS SOURCE CODE IS PROTECTED BY A LICENSE.
+     17           * FOR MORE INFORMATION PLEASE CAREFULLY READ THE LICENSE AGREEMENT FILE LOCATED
+     18           * IN THE ROOT DIRECTORY OF THIS FIRMWARE PACKAGE.
+     19           *
+     20           * <h2><center>&copy; COPYRIGHT 2015 STMicroelectronics</center></h2>
+     21           */
+     22          
+     23          
+     24          /* Includes ------------------------------------------------------------------*/
+     25          #include "SDK_EVAL_Timers.h"
+
+   \                                 In section .text, align 2, keep-with-next
+   \   static __interwork __softfp void NVIC_SetPriority(IRQn_Type, uint32_t)
+   \                     NVIC_SetPriority: (+1)
+   \   00000000   0xB410             PUSH     {R4}
+   \   00000002   0xB240             SXTB     R0,R0            ;; SignExt  R0,R0,#+24,#+24
+   \   00000004   0x2800             CMP      R0,#+0
+   \   00000006   0xD508             BPL.N    ??NVIC_SetPriority_0
+   \   00000008   0x010A             LSLS     R2,R1,#+4
+   \   0000000A   0x....             LDR.N    R3,??DataTable5  ;; 0xe000ed18
+   \   0000000C   0xB240             SXTB     R0,R0            ;; SignExt  R0,R0,#+24,#+24
+   \   0000000E   0xF010 0x040F      ANDS     R4,R0,#0xF
+   \   00000012   0x4423             ADD      R3,R3,R4
+   \   00000014   0xF803 0x2C04      STRB     R2,[R3, #-4]
+   \   00000018   0xE003             B.N      ??NVIC_SetPriority_1
+   \                     ??NVIC_SetPriority_0: (+1)
+   \   0000001A   0x010A             LSLS     R2,R1,#+4
+   \   0000001C   0x....             LDR.N    R3,??DataTable5_1  ;; 0xe000e400
+   \   0000001E   0xB240             SXTB     R0,R0            ;; SignExt  R0,R0,#+24,#+24
+   \   00000020   0x541A             STRB     R2,[R3, R0]
+   \                     ??NVIC_SetPriority_1: (+1)
+   \   00000022   0xBC10             POP      {R4}
+   \   00000024   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+   \   static __interwork __softfp uint32_t SysTick_Config(uint32_t)
+   \                     SysTick_Config: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x1E60             SUBS     R0,R4,#+1
+   \   00000006   0xF1B0 0x7F80      CMP      R0,#+16777216
+   \   0000000A   0xD301             BCC.N    ??SysTick_Config_0
+   \   0000000C   0x2001             MOVS     R0,#+1
+   \   0000000E   0xE00E             B.N      ??SysTick_Config_1
+   \                     ??SysTick_Config_0: (+1)
+   \   00000010   0x1E60             SUBS     R0,R4,#+1
+   \   00000012   0x....             LDR.N    R1,??DataTable5_2  ;; 0xe000e014
+   \   00000014   0x6008             STR      R0,[R1, #+0]
+   \   00000016   0x210F             MOVS     R1,#+15
+   \   00000018   0xF05F 0x30FF      MOVS     R0,#-1
+   \   0000001C   0x.... 0x....      BL       NVIC_SetPriority
+   \   00000020   0x2000             MOVS     R0,#+0
+   \   00000022   0x....             LDR.N    R1,??DataTable5_3  ;; 0xe000e018
+   \   00000024   0x6008             STR      R0,[R1, #+0]
+   \   00000026   0x2007             MOVS     R0,#+7
+   \   00000028   0x....             LDR.N    R1,??DataTable5_4  ;; 0xe000e010
+   \   0000002A   0x6008             STR      R0,[R1, #+0]
+   \   0000002C   0x2000             MOVS     R0,#+0
+   \                     ??SysTick_Config_1: (+1)
+   \   0000002E   0xBD10             POP      {R4,PC}          ;; return
+     26          
+     27          
+     28          
+     29          /**
+     30           * @addtogroup SDK_EVAL_STM32L
+     31           * @{
+     32           */
+     33          
+     34          /**
+     35           * @addtogroup SDK_EVAL_Timers
+     36           * @{
+     37           */
+     38          
+     39          
+     40          /**
+     41           * @defgroup SDK_EVAL_Timers_Private_TypesDefinitions           SDK EVAL Timers Private Types Definitions
+     42           * @{
+     43           */
+     44          
+     45          /**
+     46           *@}
+     47           */
+     48          
+     49          
+     50          /**
+     51           * @defgroup SDK_EVAL_Timers_Private_Defines                    SDK EVAL Timers Private Defines
+     52           * @{
+     53           */
+     54          
+     55          #define SYSTEM_CLOCK    32000000
+     56          
+     57          /**
+     58           *@}
+     59           */
+     60          
+     61          
+     62          /**
+     63           * @defgroup SDK_EVAL_Timers_Private_Macros                     SDK EVAL Timers Private Macros
+     64           * @{
+     65           */
+     66          
+     67          
+     68          
+     69          /**
+     70           *@}
+     71           */
+     72          
+     73          /**
+     74           * @defgroup SDK_EVAL_Timers_Private_Variables                  SDK EVAL Timers Private Variables
+     75           * @{
+     76           */
+     77          
+
+   \                                 In section .bss, align 4
+     78          volatile uint32_t lSystickCounter=0;
+   \                     lSystickCounter:
+   \   00000000                      DS8 4
+     79          
+     80          
+     81          /**
+     82           *@}
+     83           */
+     84          
+     85          /**
+     86           * @defgroup SDK_EVAL_Timers_Private_FunctionPrototypes         SDK EVAL Timers Private Function Prototypes
+     87           * @{
+     88           */
+     89          
+     90          /**
+     91           *@}
+     92           */
+     93          
+     94          
+     95          /**
+     96           * @defgroup SDK_EVAL_Timers_Private_Functions                  SDK EVAL Timers Private Functions
+     97           * @{
+     98           */
+     99          
+    100          
+    101          /**
+    102            * @brief  This function handles SysTick Handler.
+    103            * @param  None
+    104            * @retval None
+    105            */
+    106          //void SysTick_Handler(void)
+    107          //{
+    108          //  lSystickCounter++;
+    109          //}
+    110          
+    111          
+    112          /**
+    113            * @brief  This function implements return the current
+    114            *         systick with a step of 1 ms.
+    115            * @param  lTimeMs desired delay expressed in ms.
+    116            * @retval None
+    117            */
+
+   \                                 In section .text, align 2, keep-with-next
+    118          uint32_t SdkGetCurrentSysTick(void)
+    119          {
+    120            return lSystickCounter;
+   \                     SdkGetCurrentSysTick: (+1)
+   \   00000000   0x....             LDR.N    R0,??DataTable5_5
+   \   00000002   0x6800             LDR      R0,[R0, #+0]
+   \   00000004   0x4770             BX       LR               ;; return
+    121            
+    122          }
+    123          
+
+   \                                 In section .text, align 2, keep-with-next
+    124          void SdkStartSysTick(void)
+    125          {
+   \                     SdkStartSysTick: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    126            SysTick_Config(SYSTEM_CLOCK/100);
+   \   00000002   0x....             LDR.N    R0,??DataTable5_6  ;; 0x4e200
+   \   00000004   0x.... 0x....      BL       SysTick_Config
+    127            lSystickCounter = 0;
+   \   00000008   0x2000             MOVS     R0,#+0
+   \   0000000A   0x....             LDR.N    R1,??DataTable5_5
+   \   0000000C   0x6008             STR      R0,[R1, #+0]
+    128          }
+   \   0000000E   0xBD01             POP      {R0,PC}          ;; return
+    129          
+    130          /**
+    131            * @brief  This function implements a delay using the microcontroller
+    132            *         Systick with a step of 100 ms.
+    133            * @param  lTimeMs desired delay expressed in ms.
+    134            * @retval None
+    135            */
+
+   \                                 In section .text, align 2, keep-with-next
+    136          void SdkDelay10Ms(volatile uint32_t lTime10Ms)
+    137          {
+   \                     SdkDelay10Ms: (+1)
+   \   00000000   0xB401             PUSH     {R0}
+    138            uint32_t nWaitPeriod = ~lSystickCounter;
+   \   00000002   0x....             LDR.N    R0,??DataTable5_5
+   \   00000004   0x6800             LDR      R0,[R0, #+0]
+   \   00000006   0x43C0             MVNS     R0,R0
+    139            
+    140            if(nWaitPeriod<lTime10Ms)
+   \   00000008   0x9900             LDR      R1,[SP, #+0]
+   \   0000000A   0x4288             CMP      R0,R1
+   \   0000000C   0xD207             BCS.N    ??SdkDelay10Ms_0
+    141            {
+    142              while( lSystickCounter != 0xFFFFFFFF);
+   \                     ??SdkDelay10Ms_1: (+1)
+   \   0000000E   0x....             LDR.N    R1,??DataTable5_5
+   \   00000010   0x6809             LDR      R1,[R1, #+0]
+   \   00000012   0xF111 0x0F01      CMN      R1,#+1
+   \   00000016   0xD1FA             BNE.N    ??SdkDelay10Ms_1
+    143              nWaitPeriod = lTime10Ms-nWaitPeriod;
+   \   00000018   0x9900             LDR      R1,[SP, #+0]
+   \   0000001A   0x1A08             SUBS     R0,R1,R0
+   \   0000001C   0xE002             B.N      ??SdkDelay10Ms_2
+    144            }
+    145            else
+    146              nWaitPeriod = lTime10Ms+ ~nWaitPeriod;
+   \                     ??SdkDelay10Ms_0: (+1)
+   \   0000001E   0x9900             LDR      R1,[SP, #+0]
+   \   00000020   0x43C0             MVNS     R0,R0
+   \   00000022   0x1840             ADDS     R0,R0,R1
+    147            
+    148            while( lSystickCounter != nWaitPeriod ) ;
+   \                     ??SdkDelay10Ms_2: (+1)
+   \   00000024   0x....             LDR.N    R1,??DataTable5_5
+   \   00000026   0x6809             LDR      R1,[R1, #+0]
+   \   00000028   0x4281             CMP      R1,R0
+   \   0000002A   0xD1FB             BNE.N    ??SdkDelay10Ms_2
+    149          
+    150          }
+   \   0000002C   0xB001             ADD      SP,SP,#+4
+   \   0000002E   0x4770             BX       LR               ;; return
+    151          
+
+   \                                 In section .text, align 2, keep-with-next
+    152          void SdkDelay10Ms_ISR(volatile  uint32_t lTime10Ms)
+    153          {
+   \                     SdkDelay10Ms_ISR: (+1)
+   \   00000000   0xB401             PUSH     {R0}
+    154            uint32_t nWaitPeriod = ~(SysTick->VAL);
+   \   00000002   0x....             LDR.N    R0,??DataTable5_3  ;; 0xe000e018
+   \   00000004   0x6800             LDR      R0,[R0, #+0]
+   \   00000006   0x43C0             MVNS     R0,R0
+    155            
+    156            if(nWaitPeriod<lTime10Ms)
+   \   00000008   0x9900             LDR      R1,[SP, #+0]
+   \   0000000A   0x4288             CMP      R0,R1
+   \   0000000C   0xD207             BCS.N    ??SdkDelay10Ms_ISR_0
+    157            {
+    158              while( (SysTick->VAL) != 0xFFFFFFFF);
+   \                     ??SdkDelay10Ms_ISR_1: (+1)
+   \   0000000E   0x....             LDR.N    R1,??DataTable5_3  ;; 0xe000e018
+   \   00000010   0x6809             LDR      R1,[R1, #+0]
+   \   00000012   0xF111 0x0F01      CMN      R1,#+1
+   \   00000016   0xD1FA             BNE.N    ??SdkDelay10Ms_ISR_1
+    159              nWaitPeriod = lTime10Ms-nWaitPeriod;
+   \   00000018   0x9900             LDR      R1,[SP, #+0]
+   \   0000001A   0x1A08             SUBS     R0,R1,R0
+   \   0000001C   0xE002             B.N      ??SdkDelay10Ms_ISR_2
+    160            }
+    161            else
+    162              nWaitPeriod = lTime10Ms+ ~nWaitPeriod;
+   \                     ??SdkDelay10Ms_ISR_0: (+1)
+   \   0000001E   0x9900             LDR      R1,[SP, #+0]
+   \   00000020   0x43C0             MVNS     R0,R0
+   \   00000022   0x1840             ADDS     R0,R0,R1
+    163            
+    164            while( (SysTick->VAL) != nWaitPeriod ) ;
+   \                     ??SdkDelay10Ms_ISR_2: (+1)
+   \   00000024   0x....             LDR.N    R1,??DataTable5_3  ;; 0xe000e018
+   \   00000026   0x6809             LDR      R1,[R1, #+0]
+   \   00000028   0x4281             CMP      R1,R0
+   \   0000002A   0xD1FB             BNE.N    ??SdkDelay10Ms_ISR_2
+    165          }
+   \   0000002C   0xB001             ADD      SP,SP,#+4
+   \   0000002E   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable5:
+   \   00000000   0xE000ED18         DC32     0xe000ed18
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable5_1:
+   \   00000000   0xE000E400         DC32     0xe000e400
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable5_2:
+   \   00000000   0xE000E014         DC32     0xe000e014
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable5_3:
+   \   00000000   0xE000E018         DC32     0xe000e018
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable5_4:
+   \   00000000   0xE000E010         DC32     0xe000e010
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable5_5:
+   \   00000000   0x........         DC32     lSystickCounter
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable5_6:
+   \   00000000   0x0004E200         DC32     0x4e200
+    166          
+    167          /**
+    168           *@}
+    169           */
+    170          
+    171          
+    172          /**
+    173           *@}
+    174           */
+    175          
+    176          
+    177          /**
+    178           *@}
+    179           */
+    180          
+    181          
+    182          /******************* (C) COPYRIGHT 2015 STMicroelectronics *****END OF FILE****/
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       4   NVIC_SetPriority
+       4   SdkDelay10Ms
+       4   SdkDelay10Ms_ISR
+       0   SdkGetCurrentSysTick
+       8   SdkStartSysTick
+         8   -> SysTick_Config
+       8   SysTick_Config
+         8   -> NVIC_SetPriority
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable5
+       4  ??DataTable5_1
+       4  ??DataTable5_2
+       4  ??DataTable5_3
+       4  ??DataTable5_4
+       4  ??DataTable5_5
+       4  ??DataTable5_6
+      38  NVIC_SetPriority
+      48  SdkDelay10Ms
+      48  SdkDelay10Ms_ISR
+       6  SdkGetCurrentSysTick
+      16  SdkStartSysTick
+      48  SysTick_Config
+       4  lSystickCounter
+
+ 
+   4 bytes in section .bss
+ 232 bytes in section .text
+ 
+ 232 bytes of CODE memory
+   4 bytes of DATA memory
+
+Errors: none
+Warnings: none

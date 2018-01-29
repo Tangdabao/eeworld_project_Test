@@ -1,0 +1,156 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.70.1.11437/W32 for ARM       29/Jan/2018  14:45:22
+# Copyright 1999-2016 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\src\main.c
+#    Command line =  
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\src\main.c" -D
+#        STM32L151xB -D STM32L1XX_XL -D USE_STM32L1XX_STEVAL_IDB00xV1 -D
+#        USE_HAL_DRIVER -D HCLK_32MHZ=1 -D SYSCLK_MSI=1 -D ENABLE_USART -D
+#        USER_DEFINED_PLATFORM=USER_EVAL_PLATFORM -D IRQ_RESET_PIN -D DTM_UART
+#        -lC "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\List"
+#        -o "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj"
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=Cortex-M3 -e --fpu=None --dlib_config
+#        D:\Software\IAR_BlueNRG\arm\INC\c\DLib_Config_Normal.h -I
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\inc\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Middlewares\ST\STM32_BlueNRG1\HAL\inc\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Drivers\BSP\STM32L1xx_BlueNRG1\inc\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Drivers\BSP\STM32L1xx_Nucleo\inc\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Drivers\CMSIS\Device\ST\STM32L1xx\Include\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Drivers\STM32L1xx_HAL_Driver\Inc\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Middlewares\ST\STM32_BlueNRG1\STM32L1xx_HAL_BlueNRG1_Drivers\inc\"
+#        -I "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\..\..\..\..\Library\STM32L\Middlewares\ST\STM32_BlueNRG1\SimpleBlueNRG1_HCI\includes\"
+#        -On --use_c++_inline -I D:\Software\IAR_BlueNRG\arm\CMSIS\Include\
+#    Locale       =  Chinese (Simplified)_China.936
+#    List file    =  
+#        C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\List\main.lst
+#    Object file  =  
+#        C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\main.o
+#
+###############################################################################
+
+C:\Users\Administrator\Desktop\Temporary Files\eeworld_project\Project_Test\Project\STM32L\DTM\src\main.c
+      1          /**
+      2          * @file    main.c
+      3          * @author  RF Application Team - AMG
+      4          * @version V1.0.0
+      5          * @date    August, 2016
+      6          * @brief   Network co-processor host reference project
+      7          * @details
+      8          *
+      9          * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+     10          * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE
+     11          * TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY
+     12          * DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING
+     13          * FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE
+     14          * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+     15          *
+     16          * THIS SOURCE CODE IS PROTECTED BY A LICENSE.
+     17          * FOR MORE INFORMATION PLEASE CAREFULLY READ THE LICENSE AGREEMENT FILE LOCATED
+     18          * IN THE ROOT DIRECTORY OF THIS FIRMWARE PACKAGE.
+     19          *
+     20          * <h2><center>&copy; COPYRIGHT 2016 STMicroelectronics</center></h2>
+     21          */
+     22          
+     23          
+     24          /* Includes ------------------------------------------------------------------*/
+     25          #include "main.h"
+     26          #include "SDK_EVAL_Config.h"
+     27          #include "hci.h"
+     28          
+     29          /**
+     30          * @brief  System main function.
+     31          * @param  None
+     32          * @retval None
+     33          */
+
+   \                                 In section .text, align 2, keep-with-next
+     34          int main (void)
+     35          {
+   \                     main: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     36            /* Device Initialization */
+     37            Init_Device();
+   \   00000002   0x.... 0x....      BL       Init_Device
+     38            
+     39            /* Reset BlueNRG-1 */
+     40            BlueNRG_RST();
+   \   00000006   0x.... 0x....      BL       BlueNRG_RST
+     41            
+     42            /* Infinite loop */
+     43            while(1) {
+     44              BTLE_StackTick();
+   \                     ??main_0: (+1)
+   \   0000000A   0x.... 0x....      BL       BTLE_StackTick
+   \   0000000E   0xE7FC             B.N      ??main_0
+     45            }
+     46          }
+     47          
+     48          
+     49          
+     50          #ifdef  USE_FULL_ASSERT
+     51          /**
+     52          * @brief  Reports the name of the source file and the source line number
+     53          *         where the assert_param error has occurred.
+     54          * @param file: pointer to the source file name
+     55          * @param line: assert_param error line source number
+     56          * @retval : None
+     57          */
+     58          void assert_failed(uint8_t* file, uint32_t line)
+     59          {
+     60            /* User can add his own implementation to report the file name and line number */
+     61            printf("Wrong parameters value: file %s on line %d\r\n", file, line);
+     62            
+     63            /* Infinite loop */
+     64            while (1)
+     65            {
+     66            }
+     67          }
+     68          #endif
+     69          
+     70          
+     71          /******************* (C) COPYRIGHT 2016 STMicroelectronics *****END OF FILE****/
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   main
+         8   -> BTLE_StackTick
+         8   -> BlueNRG_RST
+         8   -> Init_Device
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      16  main
+
+ 
+ 16 bytes in section .text
+ 
+ 16 bytes of CODE memory
+
+Errors: none
+Warnings: none

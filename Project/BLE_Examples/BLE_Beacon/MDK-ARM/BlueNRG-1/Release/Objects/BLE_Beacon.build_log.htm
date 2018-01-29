@@ -1,0 +1,56 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.24.2.0
+Copyright (C) 2017 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: hdihai fsfa, fsf, LIC=7YKJJ-U4SLQ-D1XPR-K27CQ-PD1AC-0PKJ4
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Professional  Version: 5.24.1
+Toolchain Path:  D:\Software\keil\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 5 (build 528)
+Assembler:       Armasm.exe V5.06 update 5 (build 528)
+Linker/Locator:  ArmLink.exe V5.06 update 5 (build 528)
+Library Manager: ArmAr.exe V5.06 update 5 (build 528)
+Hex Converter:   FromElf.exe V5.06 update 5 (build 528)
+CPU DLL:         SARMCM3.DLL V5.24.1
+Dialog DLL:      DARMCM1.DLL V1.18.0.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.1.0
+Dialog DLL:      TARMCM1.DLL V1.13.0.0
+ 
+<h2>Project:</h2>
+C:\Users\Administrator\Desktop\Temporary Files\eeworld_project\Project_Test\Project\BLE_Examples\BLE_Beacon\MDK-ARM\BlueNRG-1\BLE_Beacon.uvprojx
+Project File Date:  01/29/2018
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 5 (build 528)', folder: 'D:\Software\keil\ARM\ARMCC\Bin'
+Build target 'Release'
+compiling BLE_Beacon_main.c...
+..\..\src\BLE_Beacon_main.c(256): warning:  #177-D: variable "adc_value"  was declared but never referenced
+      float adc_value;
+..\..\src\BLE_Beacon_main.c: 1 warning, 0 errors
+linking...
+.\BlueNRG1.sct(114): warning: L6329W: Pattern *.o(.ota_sw_activation) only matches removed unused sections.
+Program Size: Code=93512 RO-data=4080 RW-data=7204 ZI-data=6868  
+Finished: 0 information, 1 warning and 0 error messages.
+FromELF: creating hex file...
+After Build - User command #1: fromelf.exe --bin Release\Objects\BLE_Beacon.axf --output Release\Objects\BLE_Beacon.bin
+".\Release\Objects\BLE_Beacon.axf" - 0 Error(s), 2 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STBlueNRG-1_DFP.1.2.0.pack
+                Keil.STBlueNRG-1_DFP.1.2.0
+                STMicroelectronics BlueNRG-1 Series Device Support
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_Release
+
+<h2>Collection of Component Files used:</h2>
+Build Time Elapsed:  00:00:03
+</pre>
+</body>
+</html>

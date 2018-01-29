@@ -1,0 +1,473 @@
+###############################################################################
+#
+# IAR ELF Linker V7.70.1.11437/W32 for ARM                29/Jan/2018  14:45:32
+# Copyright 2007-2016 IAR Systems AB.
+#
+#    Output file  =  
+#        C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Exe\STM32L_Nucleo_DTM_SPI.out
+#    Map file     =  
+#        C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\List\STM32L_Nucleo_DTM_SPI.map
+#    Command line =  
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\bluenrg1_events.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\bluenrg1_gap_aci.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\bluenrg1_gatt_aci.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\bluenrg1_hal_aci.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\bluenrg1_hci_le.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\bluenrg1_l2cap_aci.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\bluenrg_interface.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\clock.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\cube_hal_l1.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\gp_timer.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\hci.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\hci_parser.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\list.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\main.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\osal.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\SDK_Eval_Com.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\SDK_Eval_Config.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\SDK_EVAL_Spi.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\SDK_Eval_Timers.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\SDK_EVAL_Uart.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\startup_stm32l151xb.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\stm32l1xx_hal.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\stm32l1xx_hal_cortex.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\stm32l1xx_hal_dma.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\stm32l1xx_hal_flash.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\stm32l1xx_hal_flash_ex.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\stm32l1xx_hal_gpio.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\stm32l1xx_hal_pwr.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\stm32l1xx_hal_pwr_ex.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\stm32l1xx_hal_rcc.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\stm32l1xx_hal_rcc_ex.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\stm32l1xx_hal_spi.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\stm32l1xx_hal_spi_ex.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\stm32l1xx_hal_tim.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\stm32l1xx_hal_tim_ex.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\stm32l1xx_hal_uart.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\stm32l1xx_hal_usart.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\stm32l1xx_hal_wwdg.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\stm32xx_it.o"
+#        "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj\system_stm32l1xx.o"
+#        --redirect _Printf=_PrintfLargeNoMb --redirect _Scanf=_ScanfLargeNoMb
+#        -o "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Exe\STM32L_Nucleo_DTM_SPI.out"
+#        --map "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\List\STM32L_Nucleo_DTM_SPI.map"
+#        --config "C:\Users\Administrator\Desktop\Temporary
+#        Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\stm32l1xx_flash_nucleo.icf"
+#        --semihosting --entry __iar_program_start --vfe
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x08000000 { ro section .intvec };
+"P1":  place in [from 0x08000000 to 0x0807ffff] { ro };
+"P2":  place in [from 0x20000000 to 0x20013fff] { rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+
+  Section            Kind        Address    Size  Object
+  -------            ----        -------    ----  ------
+"A0":                                       0xf4
+  .intvec            ro code  0x08000000    0xf4  startup_stm32l151xb.o [1]
+                            - 0x080000f4    0xf4
+
+"P1":                                     0x2844
+  .text              ro code  0x080000f4   0xf00  stm32l1xx_hal_rcc.o [1]
+  .text              ro code  0x08000ff4     0xc  stm32l1xx_hal.o [1]
+  .text              ro code  0x08001000    0x24  stm32l1xx_hal.o [1]
+  .text              ro code  0x08001024    0x10  stm32l1xx_hal_pwr_ex.o [1]
+  .text              ro code  0x08001034   0x164  stm32l1xx_hal_cortex.o [1]
+  .text              ro code  0x08001198   0x7d0  stm32l1xx_hal_uart.o [1]
+  .text              ro code  0x08001968   0x280  cube_hal_l1.o [1]
+  .text              ro code  0x08001be8     0x2  stm32l1xx_hal_uart.o [1]
+  .text              ro code  0x08001bec    0x36  stm32l1xx_hal.o [1]
+  .text              ro code  0x08001c24   0x168  SDK_Eval_Com.o [1]
+  .text              ro code  0x08001d8c   0x18c  SDK_EVAL_Uart.o [1]
+  .text              ro code  0x08001f18   0x378  stm32l1xx_hal_gpio.o [1]
+  .text              ro code  0x08002290    0x98  SDK_EVAL_Spi.o [1]
+  .text              ro code  0x08002328    0x2e  bluenrg_interface.o [1]
+  .text              ro code  0x08002356    0x1a  stm32l1xx_hal.o [1]
+  .text              ro code  0x08002370   0x2bc  hci_parser.o [1]
+  .text              ro code  0x0800262c    0x6c  hci.o [1]
+  .text              ro code  0x08002698    0x64  system_stm32l1xx.o [1]
+  .text              ro code  0x080026fc    0x40  zero_init3.o [4]
+  .text              ro code  0x0800273c    0x34  stm32xx_it.o [1]
+  .text              ro code  0x08002770    0x10  stm32l1xx_hal.o [1]
+  .text              ro code  0x08002780    0x2c  copy_init3.o [4]
+  .text              ro code  0x080027ac    0x28  data_init.o [4]
+  .iar.init_table    const    0x080027d4    0x24  - Linker created -
+  .text              ro code  0x080027f8    0x1a  cmain.o [4]
+  .text              ro code  0x08002812     0x4  low_level_init.o [3]
+  .text              ro code  0x08002816    0x10  main.o [1]
+  .text              ro code  0x08002826     0x4  exit.o [3]
+  .text              ro code  0x0800282c     0xa  cexit.o [4]
+  .text              ro code  0x08002838    0x14  exit.o [5]
+  .rodata            const    0x0800284c    0x10  stm32l1xx_hal_rcc.o [1]
+  .text              ro code  0x0800285c    0x10  startup_stm32l151xb.o [1]
+  .rodata            const    0x0800286c     0xc  stm32l1xx_hal_rcc.o [1]
+  .text              ro code  0x08002878     0xc  cstartup_M.o [4]
+  .rodata            const    0x08002884     0x4  stm32l1xx_hal_rcc.o [1]
+  .text              ro code  0x08002888     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x0800288c     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x08002890     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x08002894     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x08002898     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x0800289c     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x080028a0     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x080028a4     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x080028a8     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x080028ac     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x080028b0     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x080028b4     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x080028b8     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x080028bc     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x080028c0     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x080028c4     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x080028c8     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x080028cc     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x080028d0     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x080028d4     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x080028d8     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x080028dc     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x080028e0     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x080028e4     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x080028e8     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x080028ec     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x080028f0     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x080028f4     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x080028f8     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x080028fc     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x08002900     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x08002904     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x08002908     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x0800290c     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x08002910     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x08002914     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x08002918     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x0800291c     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x08002920     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x08002924     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x08002928     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x0800292c     0x4  startup_stm32l151xb.o [1]
+  .text              ro code  0x08002930     0x4  startup_stm32l151xb.o [1]
+  Initializer bytes  const    0x08002934     0x4  <for P2-1>
+  .rodata            const    0x08002938     0x0  zero_init3.o [4]
+  .rodata            const    0x08002938     0x0  copy_init3.o [4]
+                            - 0x08002938  0x2844
+
+"P2", part 1 of 3:                           0x4
+  P2-1                        0x20000000     0x4  <Init block>
+    .data            inited   0x20000000     0x4  system_stm32l1xx.o [1]
+                            - 0x20000004     0x4
+
+"P2", part 2 of 3:                         0xc00
+  CSTACK                      0x20000008   0xc00  <Block>
+    CSTACK           uninit   0x20000008   0xc00  <Block tail>
+                            - 0x20000c08   0xc00
+
+"P2", part 3 of 3:                         0x990
+  .bss               zero     0x20000c08   0x400  hci.o [1]
+  .bss               zero     0x20001008   0x200  hci_parser.o [1]
+  .bss               zero     0x20001208   0x200  hci_parser.o [1]
+  .bss               zero     0x20001408    0xfc  SDK_EVAL_Uart.o [1]
+  .bss               zero     0x20001504    0x40  SDK_Eval_Com.o [1]
+  .bss               zero     0x20001544    0x40  SDK_EVAL_Uart.o [1]
+  .bss               zero     0x20001584     0x4  SDK_Eval_Com.o [1]
+  .bss               zero     0x20001588     0x4  stm32l1xx_hal.o [1]
+  .bss               zero     0x2000158c     0x2  hci.o [1]
+  .bss               zero     0x2000158e     0x2  hci_parser.o [1]
+  .bss               zero     0x20001590     0x2  hci_parser.o [1]
+  .bss               zero     0x20001592     0x2  hci_parser.o [1]
+  .bss               zero     0x20001594     0x1  hci_parser.o [1]
+  .bss               zero     0x20001595     0x1  SDK_Eval_Com.o [1]
+                            - 0x20001596   0x98e
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x98e:
+          0x20000c08  0x98e
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x4:
+          0x08002934    0x4
+    1 destination range, total size 0x4:
+          0x20000000    0x4
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                  ro code  ro data  rw data
+    ------                  -------  -------  -------
+C:\Users\Administrator\Desktop\Temporary Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj: [1]
+    SDK_EVAL_Spi.o              152
+    SDK_EVAL_Uart.o             396               316
+    SDK_Eval_Com.o              360                69
+    bluenrg_interface.o          46
+    cube_hal_l1.o               640
+    hci.o                       108             1 026
+    hci_parser.o                700             1 031
+    main.o                       16
+    startup_stm32l151xb.o       432
+    stm32l1xx_hal.o             144                 4
+    stm32l1xx_hal_cortex.o      356
+    stm32l1xx_hal_gpio.o        888
+    stm32l1xx_hal_pwr_ex.o       16
+    stm32l1xx_hal_rcc.o       3 840       32
+    stm32l1xx_hal_uart.o      2 002
+    stm32xx_it.o                 52
+    system_stm32l1xx.o          100        4        4
+    -------------------------------------------------
+    Total:                   10 248       36    2 450
+
+command line: [2]
+    -------------------------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    exit.o                        4
+    low_level_init.o              4
+    -------------------------------------------------
+    Total:                        8
+
+rt7M_tl.a: [4]
+    cexit.o                      10
+    cmain.o                      26
+    copy_init3.o                 44
+    cstartup_M.o                 12
+    data_init.o                  40
+    zero_init3.o                 64
+    -------------------------------------------------
+    Total:                      196
+
+shb_l.a: [5]
+    exit.o                       20
+    -------------------------------------------------
+    Total:                       20
+
+    Gaps                          8
+    Linker created                        36    3 072
+-----------------------------------------------------
+    Grand Total:             10 480       72    5 522
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address   Size  Type      Object
+-----                      -------   ----  ----      ------
+.iar.init_table$$Base   0x080027d4          --   Gb  - Linker created -
+.iar.init_table$$Limit  0x080027f8          --   Gb  - Linker created -
+?main                   0x080027f9         Code  Gb  cmain.o [4]
+BTLE_StackTick          0x0800262d   0x5a  Code  Gb  hci.o [1]
+BlueNRG_HW_Bootloader   0x080022d1   0x12  Code  Gb  SDK_EVAL_Spi.o [1]
+BlueNRG_Power_Down      0x080022bf   0x12  Code  Gb  SDK_EVAL_Spi.o [1]
+BlueNRG_RST             0x08002291   0x2e  Code  Gb  SDK_EVAL_Spi.o [1]
+CSTACK$$Base            0x20000008          --   Gb  - Linker created -
+CSTACK$$Limit           0x20000c08          --   Gb  - Linker created -
+DTM_Config_GPIO_InputIrq_CTS
+                        0x08001e6d   0x36  Code  Gb  SDK_EVAL_Uart.o [1]
+DTM_Config_GPIO_Output_RTS
+                        0x08001e21   0x26  Code  Gb  SDK_EVAL_Uart.o [1]
+DTM_Config_UART_CTS     0x08001ea3   0x2c  Code  Gb  SDK_EVAL_Uart.o [1]
+DTM_Config_UART_RTS     0x08001e47   0x26  Code  Gb  SDK_EVAL_Uart.o [1]
+DTM_IO_Config           0x08001d8d   0x94  Code  Gb  SDK_EVAL_Uart.o [1]
+DTM_UART_CTS_Input      0x08001ecf   0x2c  Code  Gb  SDK_EVAL_Uart.o [1]
+DTM_UartHandle          0x20001544   0x40  Data  Gb  SDK_EVAL_Uart.o [1]
+DTM_read_data           0x20001408   0xfc  Data  Gb  SDK_EVAL_Uart.o [1]
+DebugMon_Handler        0x08002743    0x2  Code  Gb  stm32xx_it.o [1]
+EXTI0_IRQHandler        0x0800234d    0xa  Code  Gb  bluenrg_interface.o [1]
+EXTI15_10_IRQHandler    0x08002765    0xc  Code  Gb  stm32xx_it.o [1]
+HAL_Delay               0x08002357   0x1a  Code  Wk  stm32l1xx_hal.o [1]
+HAL_GPIO_DeInit         0x080020e1  0x132  Code  Gb  stm32l1xx_hal_gpio.o [1]
+HAL_GPIO_EXTI_Callback  0x08002329   0x1e  Code  Gb  bluenrg_interface.o [1]
+HAL_GPIO_EXTI_IRQHandler
+                        0x0800223f   0x1e  Code  Gb  stm32l1xx_hal_gpio.o [1]
+HAL_GPIO_Init           0x08001f19  0x1c8  Code  Gb  stm32l1xx_hal_gpio.o [1]
+HAL_GPIO_ReadPin        0x08002213   0x18  Code  Gb  stm32l1xx_hal_gpio.o [1]
+HAL_GPIO_WritePin       0x0800222b   0x14  Code  Gb  stm32l1xx_hal_gpio.o [1]
+HAL_GetTick             0x08000ff5    0xc  Code  Wk  stm32l1xx_hal.o [1]
+HAL_IncTick             0x08002771   0x10  Code  Wk  stm32l1xx_hal.o [1]
+HAL_Init                0x08001bed   0x2e  Code  Gb  stm32l1xx_hal.o [1]
+HAL_InitTick            0x08001001   0x24  Code  Wk  stm32l1xx_hal.o [1]
+HAL_MspInit             0x08001c21    0x2  Code  Wk  stm32l1xx_hal.o [1]
+HAL_NVIC_DisableIRQ     0x08001159    0xe  Code  Gb  stm32l1xx_hal_cortex.o [1]
+HAL_NVIC_EnableIRQ      0x0800114b    0xe  Code  Gb  stm32l1xx_hal_cortex.o [1]
+HAL_NVIC_SetPriority    0x08001125   0x26  Code  Gb  stm32l1xx_hal_cortex.o [1]
+HAL_NVIC_SetPriorityGrouping
+                        0x08001119    0xc  Code  Gb  stm32l1xx_hal_cortex.o [1]
+HAL_PWREx_GetVoltageRange
+                        0x08001025    0xa  Code  Gb  stm32l1xx_hal_pwr_ex.o [1]
+HAL_RCC_ClockConfig     0x080009c1  0x44c  Code  Gb  stm32l1xx_hal_rcc.o [1]
+HAL_RCC_GetHCLKFreq     0x08000ec5   0x28  Code  Gb  stm32l1xx_hal_rcc.o [1]
+HAL_RCC_GetPCLK1Freq    0x08000eed   0x20  Code  Gb  stm32l1xx_hal_rcc.o [1]
+HAL_RCC_GetPCLK2Freq    0x08000f0d   0x20  Code  Gb  stm32l1xx_hal_rcc.o [1]
+HAL_RCC_GetSysClockFreq
+                        0x08000e19   0xa6  Code  Gb  stm32l1xx_hal_rcc.o [1]
+HAL_RCC_OscConfig       0x080000f5  0x8c4  Code  Gb  stm32l1xx_hal_rcc.o [1]
+HAL_SYSTICK_Config      0x08001167    0xc  Code  Gb  stm32l1xx_hal_cortex.o [1]
+HAL_UART_DeInit         0x08001209   0x4a  Code  Gb  stm32l1xx_hal_uart.o [1]
+HAL_UART_ErrorCallback  0x08001b9d   0x16  Code  Gb  cube_hal_l1.o [1]
+HAL_UART_IRQHandler     0x080013d7  0x144  Code  Gb  stm32l1xx_hal_uart.o [1]
+HAL_UART_Init           0x08001199   0x70  Code  Gb  stm32l1xx_hal_uart.o [1]
+HAL_UART_MspDeInit      0x08001b01   0x66  Code  Gb  cube_hal_l1.o [1]
+HAL_UART_MspInit        0x080019f9  0x108  Code  Gb  cube_hal_l1.o [1]
+HAL_UART_Receive_IT     0x0800134f   0x88  Code  Gb  stm32l1xx_hal_uart.o [1]
+HAL_UART_RxCpltCallback
+                        0x08001b67   0x36  Code  Gb  cube_hal_l1.o [1]
+HAL_UART_Transmit       0x08001253   0xfc  Code  Gb  stm32l1xx_hal_uart.o [1]
+HAL_UART_TxCpltCallback
+                        0x08001be9    0x2  Code  Wk  stm32l1xx_hal_uart.o [1]
+HardFault_Handler       0x0800273f    0x2  Code  Gb  stm32xx_it.o [1]
+IO_Receive_Data         0x20001584    0x4  Data  Lc  SDK_Eval_Com.o [1]
+Init_Device             0x080019e3   0x16  Code  Gb  cube_hal_l1.o [1]
+NMI_Handler             0x0800273d    0x2  Code  Gb  stm32xx_it.o [1]
+NVIC_DisableIRQ         0x08001071   0x14  Code  Lc  stm32l1xx_hal_cortex.o [1]
+NVIC_EnableIRQ          0x0800105d   0x14  Code  Lc  stm32l1xx_hal_cortex.o [1]
+NVIC_EncodePriority     0x080010ab   0x3e  Code  Lc  stm32l1xx_hal_cortex.o [1]
+NVIC_GetPriorityGrouping
+                        0x08001053    0xa  Code  Lc  stm32l1xx_hal_cortex.o [1]
+NVIC_SetPriority        0x08001085   0x26  Code  Lc  stm32l1xx_hal_cortex.o [1]
+NVIC_SetPriorityGrouping
+                        0x08001035   0x1e  Code  Lc  stm32l1xx_hal_cortex.o [1]
+PendSV_Handler          0x08002745    0x2  Code  Gb  stm32xx_it.o [1]
+RCC_SetFlashLatencyFromMSIRange
+                        0x08000f31   0x90  Code  Lc  stm32l1xx_hal_rcc.o [1]
+Region$$Table$$Base     0x080027d4          --   Gb  - Linker created -
+Region$$Table$$Limit    0x080027f8          --   Gb  - Linker created -
+SVC_Handler             0x08002741    0x2  Code  Gb  stm32xx_it.o [1]
+SdkEvalSpiDtmMisoPinState
+                        0x08002303   0x22  Code  Gb  SDK_EVAL_Spi.o [1]
+SdkEvalSpiMisoPinInit   0x080022e3   0x20  Code  Gb  SDK_EVAL_Spi.o [1]
+SdkEvalUart_Init        0x08001c25   0xd6  Code  Lc  SDK_Eval_Com.o [1]
+SdkEvalUart_Send_Data   0x08001d07   0x14  Code  Lc  SDK_Eval_Com.o [1]
+SdkEvalUart_Wait_Send_Data
+                        0x08001cfb    0xc  Code  Lc  SDK_Eval_Com.o [1]
+SdkEval_IO_Config       0x08001d25   0x10  Code  Gb  SDK_Eval_Com.o [1]
+SdkEval_IO_Receive_Data
+                        0x08001d43   0x1c  Code  Gb  SDK_Eval_Com.o [1]
+SdkEval_IO_Send_Data    0x08001d35    0xe  Code  Gb  SDK_Eval_Com.o [1]
+SdkEval_IO_Uart_Irq_Handler
+                        0x08001d1b    0xa  Code  Gb  SDK_Eval_Com.o [1]
+SysTick_Config          0x080010e9   0x30  Code  Lc  stm32l1xx_hal_cortex.o [1]
+SysTick_Handler         0x08002747    0x8  Code  Gb  stm32xx_it.o [1]
+SystemClock_Config      0x08001969   0x7a  Code  Gb  cube_hal_l1.o [1]
+SystemCoreClock         0x20000000    0x4  Data  Gb  system_stm32l1xx.o [1]
+SystemInit              0x08002699   0x4c  Code  Gb  system_stm32l1xx.o [1]
+UART_EndTransmit_IT     0x08001677   0x3c  Code  Lc  stm32l1xx_hal_uart.o [1]
+UART_Receive_IT         0x080016b3   0xc6  Code  Lc  stm32l1xx_hal_uart.o [1]
+UART_SetConfig          0x08001779  0x1e4  Code  Lc  stm32l1xx_hal_uart.o [1]
+UART_Transmit_IT        0x080015fd   0x7a  Code  Lc  stm32l1xx_hal_uart.o [1]
+UART_WaitOnFlagUntilTimeout
+                        0x0800151b   0xe2  Code  Lc  stm32l1xx_hal_uart.o [1]
+USART1_IRQHandler       0x08002757    0xa  Code  Gb  stm32xx_it.o [1]
+USART2_IRQHandler       0x0800274f    0x8  Code  Gb  stm32xx_it.o [1]
+__cmain                 0x080027f9         Code  Gb  cmain.o [4]
+__exit                  0x08002839   0x14  Code  Gb  exit.o [5]
+__iar_copy_init3        0x08002781   0x2c  Code  Gb  copy_init3.o [4]
+__iar_data_init3        0x080027ad   0x28  Code  Gb  data_init.o [4]
+__iar_program_start     0x08002879         Code  Gb  cstartup_M.o [4]
+__iar_zero_init3        0x080026fd   0x40  Code  Gb  zero_init3.o [4]
+__low_level_init        0x08002813    0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x08000000         Data  Gb  startup_stm32l151xb.o [1]
+_call_main              0x08002805         Code  Gb  cmain.o [4]
+_exit                   0x0800282d         Code  Gb  cexit.o [4]
+_main                   0x0800280f         Code  Gb  cmain.o [4]
+aAPBAHBPrescTable       0x0800284c   0x10  Data  Gb  stm32l1xx_hal_rcc.o [1]
+aPLLDivisionFactorTable
+                        0x08002884    0x4  Data  Gb  stm32l1xx_hal_rcc.o [1]
+aPLLMulFactorTable      0x0800286c    0xc  Data  Gb  stm32l1xx_hal_rcc.o [1]
+buffer_out              0x20001208  0x200  Data  Gb  hci_parser.o [1]
+command_fifo            0x20000c08  0x400  Data  Gb  hci.o [1]
+command_fifo_size       0x2000158c    0x2  Data  Gb  hci.o [1]
+exit                    0x08002827    0x4  Code  Gb  exit.o [3]
+hci_buffer              0x20001008  0x200  Data  Lc  hci_parser.o [1]
+hci_input               0x08002371  0x1ce  Code  Gb  hci_parser.o [1]
+hci_input::collected_payload_len
+                        0x20001590    0x2  Data  Lc  hci_parser.o [1]
+hci_input::payload_len  0x20001592    0x2  Data  Lc  hci_parser.o [1]
+hci_input::state        0x20001594    0x1  Data  Lc  hci_parser.o [1]
+hci_pckt_len            0x2000158e    0x2  Data  Lc  hci_parser.o [1]
+main                    0x08002817   0x10  Code  Gb  main.o [1]
+packet_received         0x0800253f   0x72  Code  Lc  hci_parser.o [1]
+parse_cmd               0x080025d5   0x58  Code  Lc  hci_parser.o [1]
+putchar                 0x08001d7d   0x10  Code  Gb  SDK_Eval_Com.o [1]
+read_data               0x20001595    0x1  Data  Gb  SDK_Eval_Com.o [1]
+uwTick                  0x20001588    0x4  Data  Lc  stm32l1xx_hal.o [1]
+xUsartInit              0x20001504   0x40  Data  Gb  SDK_Eval_Com.o [1]
+
+
+[1] = C:\Users\Administrator\Desktop\Temporary Files\eeworld_project\Project_Test\Project\STM32L\DTM\EWARM\DTM_UART\Obj
+[2] = command line
+[3] = dl7M_tln.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+  10 480 bytes of readonly  code memory
+      72 bytes of readonly  data memory
+   5 522 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

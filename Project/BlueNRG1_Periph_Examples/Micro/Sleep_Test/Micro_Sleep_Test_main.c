@@ -15,8 +15,10 @@
 
 
 #define WAKEUP_TIMER 0 //Virtual Timer #0
-#define WAKEUP_TIMEOUT 10000 // 5 sec 
+#define WAKEUP_TIMEOUT 10000 // 10sec 
 static void Update_Beaconing(void);
+
+uint32_t Count_1,Count_old;
 //BLE//
 
 void Device_Init(void)
@@ -57,6 +59,7 @@ void Device_Init(void)
 */
 static void Start_Beaconing(void)
 {
+	  uint8_t Num=0;
     uint8_t ret = BLE_STATUS_SUCCESS;
     /* Set AD Type Flags at beginning on Advertising packet  */
     uint8_t adv_data[] =
@@ -75,7 +78,7 @@ static void Start_Beaconing(void)
         0xA1, 0x2F, 0x17, 0xD1, 0xAD, 0x07, 0xA9, 0x61,
         0x00, 0x00, // Major number
         0x00, 0x00, // Minor number
-        0xC8        //2's complement of the Tx power (-56dB)};
+        Num        //2's complement of the Tx power (-56dB)};
     };
 
     /* disable scan response */
@@ -162,7 +165,6 @@ void sleep_timer(void)
 int main(void)
 {
   uint8_t  ret;
-	uint8_t Count=0;
   SystemInit();
   SdkEvalIdentification();
   HW_Config();
@@ -171,26 +173,13 @@ int main(void)
     printf("Error during BlueNRG_Stack_Initialization() 0x%02x\r\n", ret);
     while(1);
   }
-	 Device_Init();
-   Start_Beaconing();
-    //Start ADC
-   // ADC_Configuration();
-   // ADC_Cmd(ENABLE);
-    /////
-
-    ///
-    //LSM6D_Configuration();
-    //Init_Pressure_Temperature_Sensor();
-
-    ///
-    /* Start Beacon Non Connectable Mode*/
-   
-    printf("Sleep Test\r\n");
-    
-   
+	
+   Device_Init();
+   printf("Sleep Test_Demo\r\n");  
+   sleep_timer(); 
+	
 	while(1) {
-    BTLE_StackTick();
-		sleep_timer(); 
+		BTLE_StackTick();
 		printf("Sleep Test\r\n");
 		
   }
@@ -198,12 +187,20 @@ int main(void)
 
 void HAL_VTimerTimeoutCallback(uint8_t timerNum)
 {
-	  HAL_VTimer_Stop(WAKEUP_TIMER);
+	 HAL_VTimer_Stop(WAKEUP_TIMER);
+   Start_Beaconing();
   /* Add app code to execute @ Sleep timeout */
 	if (timerNum==WAKEUP_TIMER)
-	{
+	{ 
+		Count_old=Count_1;
+		Count_1=HAL_VTimerGetCurrentTime_sysT32();
+		printf("HAL_VTimerGetCurrentTime_sysT32 : %d\r\n",Count_1);
+		printf("HAL_VTimerGetCurrentTime_sysT32 : %d\r\n",Count_old);
+		printf("a-b : %d\r\n",Count_1-Count_old);
+		printf("HAL_VTimerDiff_ms_sysT32 : %d\r\n",HAL_VTimerDiff_ms_sysT32(Count_1,Count_old));
 		Update_Beaconing();
 		printf("HAL_VTimerTimeoutCallback\r\n");
+		aci_gap_set_non_discoverable();
 		sleep_timer();
 	}	
 }

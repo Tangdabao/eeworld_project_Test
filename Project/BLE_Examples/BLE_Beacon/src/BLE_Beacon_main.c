@@ -49,25 +49,20 @@ extern LSM6DS3_DrvExtTypeDef *Imu6AxesDrvExt;
 /* Private define ------------------------------------------------------------*/
 #define BLE_BEACON_VERSION_STRING "1.1.0"
 
-/* Set to 1 for enabling Flags AD Type position at the beginning
-   of the advertising packet */
-#define ENABLE_FLAGS_AD_TYPE_AT_BEGINNING 1
-//Test Define
-#define ADC_Test   0
-#define ACC_Test   1
-#define Press_Test 0
-#define VTimer_Num 0
-#define WAKEUP_TIMEOUT 20000 //20S
-
-
+//******Define function***********//
 #define H16(x)   (((int) (x)) >> 8)
 #define L16(x)   (((int) (x)))
-
 #define H32(x)   (((int) (x)) >> 24)
 #define MH32(x)  (((int) (x)) >> 16)
 #define L32(x)   (((int) (x)) >> 8)
 #define XL32(x)  (((int) (x)))
-
+//******Define VTimer************//	
+#define VTimer_Num 0
+#define WAKEUP_TIMEOUT 10000 //S
+//******Test Define**************//
+#define ADC_Test   0
+#define ACC_Test   1
+#define Press_Test 0
 
 /*****************************/
 float vlotage = 3.3;//V
@@ -78,6 +73,9 @@ float angleX = 10.2;//deg
 float angleY = 0.3;//deg
 /*****************************/
 
+uint32_t Timer_Count, Timer_Count_old;
+int32_t Timer_Count_Current;
+/*****************************/
 
 /* Private macro -------------------------------------------------------------*/
 extern ADC_InitType xADC_InitType;
@@ -138,12 +136,7 @@ static void Start_Beaconing(void)
     };
     ret = hci_le_set_scan_response_data(0, NULL);
     if (ret != BLE_STATUS_SUCCESS)
-    {
         printf ("Error in hci_le_set_scan_resp_data() 0x%04x\r\n", ret);
-    }
-    else
-        printf ("hci_le_set_scan_resp_data() --> SUCCESS\r\n");
-
     ret = aci_gap_set_discoverable(ADV_NONCONN_IND, 0x4000, 0x4000, PUBLIC_ADDR, NO_WHITE_LIST_USE,
                                    0, NULL, 0, NULL, 0, 0);
     if (ret != BLE_STATUS_SUCCESS)
@@ -151,9 +144,6 @@ static void Start_Beaconing(void)
         printf ("Error in aci_gap_set_discoverable() 0x%04x\r\n", ret);
         NVIC_SystemReset();
     }
-    else
-        printf ("aci_gap_set_discoverable() --> SUCCESS\r\n");
-
     /* Set the  ADV data with the Flags AD Type at beginning of the
        advertsing packet,  followed by the beacon manufacturer specific data */
     ret = hci_le_set_advertising_data (sizeof(adv_data), adv_data);
@@ -162,46 +152,50 @@ static void Start_Beaconing(void)
         printf ("Error in hci_le_set_advertising_data() 0x%04x\r\n", ret);
         return;
     }
-    else
-        printf ("hci_le_set_advertising_data() --> SUCCESS\r\n");
 }
-
-
 
 static void Update_Beaconing(void)
 {
     static uint8_t Count = 0;
-    
-	  Count++;
+    uint8_t ret = BLE_STATUS_SUCCESS;
+    //uint32_t Time_Current_S = 0;
     printf("Update_Beaconing :%d \r\n", Count);
-
-    /* Set AD Type Flags at beginning on Advertising packet  */
+    //Time_Current_S = (Timer_Count_Current / 1000) * Count;
     uint8_t adv_data[] =
     {
         /* Advertising data: Flags AD Type */
         0x02,
         0x01,
         0x06,
-        15,
+        16,
         AD_TYPE_MANUFACTURER_SPECIFIC_DATA,
-        H16(vlotage * 10),
-        L16(vlotage * 10),
-        H32(time),
-        MH32(time),
-        L32(time),
-        XL32(time),
-        H16(pressure * 10),
-        L16(pressure * 10),
-        H16(temperature * 10),
-        L16(temperature * 10),
-        H16(angleX * 10),
-        L16(angleX * 10),
-        H16(angleY * 10),
-        L16(angleY * 10),
+        H16 (vlotage * 10),
+        L16 (vlotage * 10),
+        H32 (Timer_Count_Current),
+        MH32(Timer_Count_Current),
+        L32 (Timer_Count_Current),
+        XL32(Timer_Count_Current),
+        H16 (pressure * 10),
+        L16 (pressure * 10),
+        H16 (temperature * 10),
+        L16 (temperature * 10),
+        H16 (angleX * 10),
+        L16 (angleX * 10),
+        H16 (angleY * 10),
+        L16 (angleY * 10),
+        Count
 
     };
-    /* Update the ADV data with the BEACON manufacturing data */
-    hci_le_set_advertising_data (sizeof(adv_data), adv_data);
+    ret = hci_le_set_advertising_data (sizeof(adv_data), adv_data);
+    if (ret != BLE_STATUS_SUCCESS)
+    {
+        printf ("Error in hci_le_set_advertising_data() 0x%04x\r\n", ret);
+        return;
+    }
+    else
+        printf ("hci_le_set_advertising_data() --> SUCCESS\r\n");
+
+    Count++;
 }
 
 void sleep_timer(void)
@@ -230,13 +224,12 @@ void Display(void)
     if( ADC_GetFlagStatus(ADC_FLAG_EOC))
     {
         vlotage = ADC_GetConvertedData(xADC_InitType.ADC_Input, xADC_InitType.ADC_ReferenceVoltage);
-        //vlotage = adc_value / 1000;
-
         if(vlotage < 0)
             vlotage = 0;
         printf("ADC value: %.0f V\r\n", vlotage);
         ADC_Cmd(ENABLE);
     }
+		
     //************ACC*******************//
     if (GetAccAxesRaw(&acc_data) == IMU_6AXES_OK)
     {
@@ -244,16 +237,14 @@ void Display(void)
     }
     //************Press*******************//
     Press_Update();
-		
-		//
-		Update_Beaconing();
+    //
+    Update_Beaconing();
 }
 
 int main(void)
 {
     uint8_t ret;
-
-    float adc_value;
+	
     SystemInit();
     SdkEvalIdentification();
     SdkEvalComUartInit(UART_BAUDRATE);
@@ -266,28 +257,26 @@ int main(void)
         printf("Error in BlueNRG_Stack_Initialization() 0x%02x\r\n", ret);
         while(1);
     }
-    Device_Init();
-    Start_Beaconing();
     //*********Start ADC**********//
     ADC_Configuration();
     ADC_Cmd(ENABLE);
     //*********Start LSM6D**********//
     LSM6D_Configuration();
-    //*********Start LSM6D**********//
+    //*********Start LPS25**********//
     Init_Pressure_Temperature_Sensor();
-
+		//*********Start BLE**********//
+    Device_Init();
+    Start_Beaconing();
+		//*********Start sleep**********//
+    sleep_timer();
     while(1)
     {
-        //Display();
-        //Update_Beaconing();
-        /* BlueNRG-1 stack tick */
         BTLE_StackTick();
-        sleep_timer();
     }
 }
 
 
-/***************************************************************************************/
+/******************************DelayMs***************************************************/
 void DelayMs(volatile uint32_t lTimeMs)
 {
     uint32_t i = 0;
@@ -298,15 +287,26 @@ void DelayMs(volatile uint32_t lTimeMs)
     }
 
 }
+
+
 /***************************************************************************************/
 void HAL_VTimerTimeoutCallback(uint8_t timerNum)
 {
     HAL_VTimer_Stop(VTimer_Num);
     if(timerNum == VTimer_Num)
     {
-        //Update_Beaconing();
+        ///modify 1/30
+        printf(" This is  HAL_VTimerTimeoutCallback OK\r\n");
+        Timer_Count_old = Timer_Count;
+        Timer_Count = HAL_VTimerGetCurrentTime_sysT32();
+        Timer_Count_Current = HAL_VTimerDiff_ms_sysT32(Timer_Count, Timer_Count_old);
+			  Timer_Count_Current+= Timer_Count_Current;
+        printf("HAL_VTimerDiff_ms_sysT32 : %d\r\n", Timer_Count_Current);
         Display();
-			  printf(" This is  HAL_VTimerTimeoutCallback OK\r\n");
+        //DelayMs(500);
+        printf("Display OK\r\n");
+        //aci_gap_set_non_discoverable();
+        printf("Display OK\r\n");
         sleep_timer();
     }
 }
